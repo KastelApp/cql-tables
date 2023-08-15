@@ -3,7 +3,7 @@ CREATE TABLE IF NOT EXISTS permissionsoverides (
 	id text,
 	allow_ bigint,
 	deny bigint,
-	type text,
+	type int,
 	editable boolean,
 	slowmode int,
 );
