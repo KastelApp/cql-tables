@@ -8,6 +8,7 @@ CREATE TABLE IF NOT EXISTS users (
 	phone_number text,
 	two_fa_secret text,
 	ips list<text>,
+	public_flags text,
 	flags text,
 	guilds list<text>,
 	global_nickname text,
