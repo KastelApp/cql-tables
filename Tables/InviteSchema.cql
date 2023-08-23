@@ -7,6 +7,7 @@ CREATE TABLE IF NOT EXISTS invites (
 	max_uses int,
 	creator_id text,
 	deleteable boolean,
+	type int
 );
 
 CREATE INDEX IF NOT EXISTS invites_guild_id_index ON invites (guild_id);
