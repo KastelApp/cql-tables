@@ -7,6 +7,7 @@ interface Users {
     Ips: string[];
     Password: string;
     PhoneNumber: string;
+    PublicFlags: string;
     Tag: string;
     TwoFaSecret: string;
     UserId: string;

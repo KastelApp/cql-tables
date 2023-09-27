@@ -10,5 +10,3 @@ CREATE TABLE IF NOT EXISTS friends (
 	users list<text>,
 	interactions list<frozen<friends_interactions>>,
 );
-
-CREATE INDEX IF NOT EXISTS friends_users_index ON friends (users);

@@ -23,5 +23,3 @@ CREATE TABLE IF NOT EXISTS settings (
 	max_guilds int,
 	max_file_upload_size int,
 );
-
-CREATE INDEX IF NOT EXISTS settings_tokens_token ON settings (tokens);
