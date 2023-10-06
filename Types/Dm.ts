@@ -1,13 +1,13 @@
 interface DmRecipients {
-    Flags: number;
-    UserId: string;
+	Flags: number;
+	UserId: string;
 }
 
 interface Dm {
-    ChannelId: string;
-    DmId: string;
-    Flags: number;
-    Recipients: DmRecipients[];
+	ChannelId: string;
+	DmId: string;
+	Flags: number;
+	Recipients: DmRecipients[];
 }
 
 export default Dm;

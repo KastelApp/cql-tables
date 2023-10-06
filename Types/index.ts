@@ -16,4 +16,4 @@ export { type default as Settings } from './Settings.ts';
 export { type default as User } from './User.ts';
 export { type default as VerificationLink } from './VerifcationLink.ts';
 export { type default as Webhook } from './Webhook.ts';
-export { type default as Report } from './Report.ts'
+export { type default as Report } from './Report.ts';
