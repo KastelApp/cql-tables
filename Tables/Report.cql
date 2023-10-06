@@ -1,4 +1,4 @@
-CREATE TABLE IF NOT EXISTS report {
+CREATE TABLE IF NOT EXISTS report (
     type int,
     reporter text,
     flags int,
@@ -8,4 +8,4 @@ CREATE TABLE IF NOT EXISTS report {
     status int,
     created_at timestamp,
     updated_at timestamp
-}
+)
