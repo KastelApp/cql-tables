@@ -26,7 +26,7 @@ CREATE TYPE IF NOT EXISTS main_object (
 );
 
 CREATE TABLE IF NOT EXISTS messages (
-	message_id text PRIMARY KEY,
+	message_id bigint PRIMARY KEY,
 	author_id text,
 	content text,
 	allowed_mentions int,

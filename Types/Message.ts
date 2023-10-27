@@ -1,3 +1,5 @@
+import type { types } from '@kastelll/cassandra-driver';
+
 interface Author {
 	IconUrl: string;
 	Name: string;
@@ -36,7 +38,7 @@ interface Messages {
 	MentionChannels: string[];
 	MentionRoles: string[];
 	Mentions: string[];
-	MessageId: string;
+	MessageId: types.Long;
 	Nonce: string;
 	ReplyingTo: string;
 	UpdatedDate: Date;
