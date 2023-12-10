@@ -1,6 +1,7 @@
 interface Invites {
 	ChannelId: string;
 	Code: string;
+	CreatedAt: Date;
 	CreatorId: string;
 	Deleteable: boolean;
 	Expires: Date;

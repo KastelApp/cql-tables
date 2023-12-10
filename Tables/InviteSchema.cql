@@ -3,6 +3,7 @@ CREATE TABLE IF NOT EXISTS invites (
 	guild_id text,
 	channel_id text,
 	expires timestamp,
+	created_at timestamp,
 	uses int,
 	max_uses int,
 	creator_id text,
