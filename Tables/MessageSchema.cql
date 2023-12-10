@@ -26,7 +26,7 @@ CREATE TYPE IF NOT EXISTS main_object (
 );
 
 CREATE TABLE IF NOT EXISTS messages (
-	message_id bigint PRIMARY KEY,
+	message_id bigint,
 	author_id text,
 	content text,
 	allowed_mentions int,
@@ -40,8 +40,5 @@ CREATE TABLE IF NOT EXISTS messages (
 	embeds list<frozen<main_object>>,
 	attachments list<text>,
 	replying_to text,
-);
-
-CREATE INDEX IF NOT EXISTS messages_channel_id_index ON messages (channel_id);
-
-CREATE INDEX IF NOT EXISTS messages_nonce_index ON messages (nonce);
+    PRIMARY KEY ((channel_id, nonce), message_id)
+) WITH CLUSTERING ORDER BY (message_id DESC);
