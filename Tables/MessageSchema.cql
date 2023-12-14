@@ -33,6 +33,7 @@ CREATE TABLE IF NOT EXISTS messages (
 	updated_date timestamp,
 	channel_id text,
 	nonce text,
+    bucket text,
 	flags int,
 	mentions list<text>,
 	mention_roles list<text>,
@@ -40,5 +41,5 @@ CREATE TABLE IF NOT EXISTS messages (
 	embeds list<frozen<main_object>>,
 	attachments list<text>,
 	replying_to text,
-    PRIMARY KEY ((channel_id, nonce), message_id)
+    PRIMARY KEY ((channel_id, bucket), message_id)
 ) WITH CLUSTERING ORDER BY (message_id DESC);

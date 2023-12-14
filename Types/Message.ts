@@ -31,6 +31,7 @@ interface Messages {
 	AllowedMentions: number;
 	Attachments: string[];
 	AuthorId: string;
+	Bucket: string;
 	ChannelId: string;
 	Content: string;
 	Embeds: MainObject[];
