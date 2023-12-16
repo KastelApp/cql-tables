@@ -6,4 +6,7 @@ CREATE TABLE IF NOT EXISTS files (
 	uploaded boolean,
 	uploaded_at timestamp,
 	uploaded_by text,
+	hash text,
 );
+
+CREATE INDEX IF NOT EXISTS file_hash_idx ON files (hash);
