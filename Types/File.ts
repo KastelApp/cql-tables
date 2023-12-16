@@ -1,10 +1,11 @@
 interface Files {
-	CdnToken: string;
 	Deleted: boolean;
 	FileId: string;
-	MessageId: string;
 	Name: string;
 	Type: string;
+	Uploaded: boolean;
+	UploadedAt: Date;
+	UploadedBy: string;
 }
 
 export default Files;
