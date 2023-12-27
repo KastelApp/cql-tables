@@ -1,8 +1,8 @@
 interface Users {
-	Avatar: string;
+	Avatar: string | null;
 	Email: string;
 	Flags: string;
-	GlobalNickname: string;
+	GlobalNickname: string | null;
 	Guilds: string[];
 	Ips: string[];
 	Password: string;
