@@ -1,10 +1,10 @@
 interface VerificationLink {
-	Code: string;
-	CreatedDate: Date;
-	ExpireDate: Date;
-	Flags: number;
-	Ip: string;
-	UserId: string;
+	code: string;
+	createdDate: Date;
+	expireDate: Date;
+	flags: number;
+	ip: string;
+	userId: string;
 }
 
 export default VerificationLink;

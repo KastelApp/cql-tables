@@ -3,7 +3,6 @@ CREATE TABLE IF NOT EXISTS emojis (
 	guild_id text,
 	creator_id text,
 	name text,
-	emoji_hash text,
 	disabled boolean,
 	public boolean,
 );

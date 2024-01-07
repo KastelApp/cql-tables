@@ -1,10 +1,10 @@
 interface Gifts {
-	GiftId: string;
-	GiftLength: number;
-	MaxAge: number;
-	Type: number;
-	UsedBy: string;
-	UserId: string;
+	giftId: string;
+	giftLength: number;
+	maxAge: number;
+	type: number;
+	usedBy: string;
+	userId: string;
 }
 
 export default Gifts;

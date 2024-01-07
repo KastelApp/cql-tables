@@ -1,13 +1,13 @@
 import type { types } from "@kastelll/cassandra-driver";
 
 interface PermissionsOverrides {
-	Allow: types.Long;
-	Deny: types.Long;
-	Editable: boolean;
-	Id: string; // Id of the user or role
-	PermissionId: string;
-	Slowmode: number;
-	Type: number;
+	allow: types.Long;
+	deny: types.Long;
+	editable: boolean;
+	id: string;// ? Id of the user or role
+	permissionId: string;
+	slowmode: number;
+	type: number;
 }
 
 export default PermissionsOverrides;

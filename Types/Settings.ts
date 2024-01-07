@@ -1,27 +1,27 @@
 interface SettingsTokens {
-	CreatedDate: Date;
-	Flags: number;
-	Ip: string;
-	Token: string;
-	TokenId: string;
+	createdDate: Date;
+	flags: number;
+	ip: string;
+	token: string;
+	tokenId: string;
 }
 
 interface SettingsMentions {
-	MessageId: string;
+	messageId: string;
 }
 
 interface Settings {
-	Bio: string;
-	Language: string;
-	MaxFileUploadSize: number;
-	MaxGuilds: number;
-	Mentions: SettingsMentions[];
-	Presence: number;
-	Privacy: number;
-	Status: string;
-	Theme: string;
-	Tokens: SettingsTokens[];
-	UserId: string;
+	bio: string | null;
+	language: string;
+	maxFileUploadSize: number;
+	maxGuilds: number;
+	mentions: SettingsMentions[];
+	presence: number;
+	privacy: number;
+	status: string;
+	theme: string;
+	tokens: SettingsTokens[];
+	userId: string;
 }
 
 export default Settings;

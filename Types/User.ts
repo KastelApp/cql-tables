@@ -1,17 +1,17 @@
 interface Users {
-	Avatar: string | null;
-	Email: string;
-	Flags: string;
-	GlobalNickname: string | null;
-	Guilds: string[];
-	Ips: string[];
-	Password: string;
-	PhoneNumber: string;
-	PublicFlags: string;
-	Tag: string;
-	TwoFaSecret: string;
-	UserId: string;
-	Username: string;
+	avatar: string | null;
+	email: string;
+	flags: string;
+	globalNickname: string | null;
+	guilds: string[];
+	ips: string[];
+	password: string;
+	phoneNumber: string;
+	publicFlags: string;
+	tag: string;
+	twoFaSecret: string | null;
+	userId: string;
+	username: string;
 }
 
 export default Users;

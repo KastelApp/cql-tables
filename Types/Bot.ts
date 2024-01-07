@@ -1,11 +1,10 @@
 interface Bot {
-	ApplicationId: string;
-	Description: string;
-	IconHash: string;
-	Name: string;
-	OwnerId: string;
-	Summary: string;
-	UserId: string;
+	avatar: string | null;
+	description: string | null;
+	name: string;
+	ownerId: string;
+	summary: string | null;
+	userId: string;
 }
 
 export default Bot;

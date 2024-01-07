@@ -1,10 +1,10 @@
 interface Webhooks {
-	AllowedMentions: number;
-	ChannelId: string;
-	GuildId: string;
-	Token: string;
-	Username: string;
-	WebhookId: string;
+	allowedMentions: number;
+	channelId: string;
+	guildId: string;
+	token: string;
+	username: string;
+	webhookId: string;
 }
 
 export default Webhooks;

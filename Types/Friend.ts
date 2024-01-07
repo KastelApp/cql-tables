@@ -1,14 +1,14 @@
 interface FriendsInteractions {
-	Flags: number;
-	TargetId: string;
-	TargetNickname: string;
-	UserId: string;
+	flags: number;
+	targetId: string;
+	targetNickname: string;
+	userId: string;
 }
 
 interface Friends {
-	FriendId: string;
-	Interactions: FriendsInteractions[];
-	Users: string[];
+	friendId: string;
+	interactions: FriendsInteractions[];
+	users: string[];
 }
 
 export default Friends;

@@ -1,13 +1,13 @@
 interface Guilds {
-	CoOwners: string[];
-	Description: string;
-	Features: string[];
-	Flags: number;
-	GuildId: string;
-	Icon: string;
-	MaxMembers: number;
-	Name: string;
-	OwnerId: string;
+	coOwners: string[];
+	description: string | null;
+	features: string[];
+	flags: number;
+	guildId: string;
+	icon: string | null;
+	maxMembers: number;
+	name: string;
+	ownerId: string;
 }
 
 export default Guilds;

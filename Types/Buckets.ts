@@ -1,7 +1,6 @@
-
 interface EmptyBuckets {
-    Buckets: string[]
-	ChannelId: string;
+	buckets: string[];
+	channelId: string;
 }
 
 export default EmptyBuckets;

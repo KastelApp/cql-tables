@@ -1,13 +1,15 @@
 interface Files {
-	Deleted: boolean;
-	FileId: string;
-	ForId: string | null; // not always present
-	Hash: string | null; // not always present
-	Name: string;
-	Type: string;
-	Uploaded: boolean;
-	UploadedAt: Date;
-	UploadedBy: string;
+	deleted: boolean;
+	fileId: string;
+	// ! not always present
+	forId: string | null;
+	// ! not always present
+	hash: string | null;
+	name: string;
+	type: string;
+	uploaded: boolean;
+	uploadedAt: Date;
+	uploadedBy: string;
 }
 
 export default Files;

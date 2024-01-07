@@ -1,16 +1,16 @@
 interface Channels {
-	AllowedMentions: number;
-	ChannelId: string;
-	Children: string[];
-	Description: string;
-	GuildId: string;
-	Name: string;
-	Nsfw: boolean;
-	ParentId: string;
-	PermissionsOverrides: string[];
-	Position: number;
-	Slowmode: number;
-	Type: number;
+	allowedMentions: number;
+	channelId: string;
+	children: string[];
+	description: string | null;
+	guildId: string;
+	name: string;
+	nsfw: boolean;
+	parentId: string;
+	permissionsOverrides: string[];
+	position: number;
+	slowmode: number;
+	type: number;
 }
 
 export default Channels;

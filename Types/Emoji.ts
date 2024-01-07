@@ -1,11 +1,10 @@
 interface Emojis {
-	CreatorId: string;
-	Disabled: boolean;
-	EmojiHash: string;
-	EmojiId: string;
-	GuildId: string;
-	Name: string;
-	Public: boolean;
+	creatorId: string;
+	disabled: boolean;
+	emojiId: string;
+	guildId: string;
+	name: string;
+	public: boolean;
 }
 
 export default Emojis;

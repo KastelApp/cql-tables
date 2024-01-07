@@ -1,16 +1,16 @@
 interface GuildMembersTimeouts {
-	ChannelId: string;
-	TimeoutUntil: Date;
+	channelId: string;
+	timeoutUntil: Date;
 }
 
 interface GuildMembers {
-	Flags: number;
-	GuildId: string;
-	JoinedAt: Date;
-	Nickname: string;
-	Roles: string[];
-	Timeouts: GuildMembersTimeouts[];
-	UserId: string;
+	flags: number;
+	guildId: string;
+	joinedAt: Date;
+	nickname: string | null;
+	roles: string[];
+	timeouts: GuildMembersTimeouts[];
+	userId: string;
 }
 
 export default GuildMembers;

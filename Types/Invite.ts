@@ -1,13 +1,13 @@
 interface Invites {
-	ChannelId: string;
-	Code: string;
-	CreatedAt: Date;
-	CreatorId: string;
-	Deleteable: boolean;
-	Expires: Date;
-	GuildId: string;
-	MaxUses: number;
-	Uses: number;
+	channelId: string;
+	code: string;
+	createdAt: Date;
+	creatorId: string;
+	deleteable: boolean;
+	expires: Date;
+	guildId: string;
+	maxUses: number;
+	uses: number;
 }
 
 export default Invites;

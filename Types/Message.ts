@@ -1,48 +1,48 @@
 import type { types } from "@kastelll/cassandra-driver";
 
 interface Author {
-	IconUrl: string;
-	Name: string;
+	iconUrl: string;
+	name: string;
 }
 
 interface Footer {
-	Text: string;
-	Timestamp: Date;
+	text: string;
+	timestamp: Date;
 }
 
 interface Field {
-	Description: string;
-	Title: string;
+	description: string;
+	title: string;
 }
 
 interface MainObject {
-	Author: Author;
-	Color: string;
-	Description: string;
-	Fields: Field[];
-	Footer: Footer;
-	ImageUrl: string;
-	ThumbnailUrl: string;
-	Title: string;
-	Url: string;
+	author: Author;
+	color: string;
+	description: string;
+	fields: Field[];
+	footer: Footer;
+	imageUrl: string;
+	thumbnailUrl: string;
+	title: string;
+	url: string;
 }
 
 interface Messages {
-	AllowedMentions: number;
-	Attachments: string[];
-	AuthorId: string;
-	Bucket: string;
-	ChannelId: string;
-	Content: string;
-	Embeds: MainObject[];
-	Flags: number;
-	MentionChannels: string[];
-	MentionRoles: string[];
-	Mentions: string[];
-	MessageId: types.Long;
-	Nonce: string;
-	ReplyingTo: string;
-	UpdatedDate: Date;
+	allowedMentions: number;
+	attachments: string[];
+	authorId: string;
+	bucket: string;
+	channelId: string;
+	content: string;
+	embeds: MainObject[];
+	flags: number;
+	mentionChannels: string[];
+	mentionRoles: string[];
+	mentions: string[];
+	messageId: types.Long;
+	nonce: string | null;
+	replyingTo: string | null;
+	updatedDate: Date | null;
 }
 
 export default Messages;

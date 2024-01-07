@@ -1,10 +1,10 @@
 interface Bans {
-	BannedDate: Date;
-	BannerId: string;
-	GuildId: string;
-	Reason: string;
-	UnbanDate: Date;
-	UserId: string;
+	bannedDate: Date;
+	bannerId: string;
+	guildId: string;
+	reason: string | null;
+	unbanDate: Date;
+	userId: string;
 }
 
 export default Bans;
