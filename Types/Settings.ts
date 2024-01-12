@@ -18,7 +18,7 @@ interface Settings {
 	mentions: SettingsMentions[];
 	presence: number;
 	privacy: number;
-	status: string;
+	status: string | null;
 	theme: string;
 	tokens: SettingsTokens[];
 	userId: string;

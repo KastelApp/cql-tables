@@ -5,8 +5,8 @@ interface Users {
 	globalNickname: string | null;
 	guilds: string[];
 	ips: string[];
-	password: string;
-	phoneNumber: string;
+	password: string | null;
+	phoneNumber: string | null;
 	publicFlags: string;
 	tag: string;
 	twoFaSecret: string | null;
