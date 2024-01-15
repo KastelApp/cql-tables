@@ -10,8 +10,14 @@ interface SettingsMentions {
 	messageId: string;
 }
 
+interface GuildOrder {
+	guildId: string;
+	position: number
+}
+
 interface Settings {
 	bio: string | null;
+	guildOrder: GuildOrder[] | null,
 	language: string;
 	maxFileUploadSize: number;
 	maxGuilds: number;
@@ -26,4 +32,4 @@ interface Settings {
 
 export default Settings;
 
-export type { SettingsTokens, SettingsMentions };
+export type { SettingsTokens, SettingsMentions, GuildOrder };
