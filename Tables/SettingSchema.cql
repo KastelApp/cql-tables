@@ -28,4 +28,5 @@ CREATE TABLE IF NOT EXISTS settings (
 	max_guilds int,
 	max_file_upload_size int,
 	guild_order list<frozen<guild_oreder_type>>,
+	allowed_invites int
 );

@@ -4,7 +4,7 @@ CREATE TABLE IF NOT EXISTS roles (
 	name text,
 	allowed_nsfw boolean,
 	deleteable boolean,
-	allowed_mentions int,
+	mentionable boolean,
 	hoisted boolean,
 	color int,
 	permissions bigint,

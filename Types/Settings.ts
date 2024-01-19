@@ -16,6 +16,7 @@ interface GuildOrder {
 }
 
 interface Settings {
+	allowedInvites: number,
 	bio: string | null;
 	guildOrder: GuildOrder[] | null,
 	language: string;
