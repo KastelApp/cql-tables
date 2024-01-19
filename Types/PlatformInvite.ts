@@ -2,7 +2,8 @@ interface PlatformInvite {
     code: string;
     creatorId: string;
     expiresAt: Date;
-    usedById: string;
+    usedAt: Date | null;
+    usedById: string | null;
 }
 
 export default PlatformInvite;
