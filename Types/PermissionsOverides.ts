@@ -1,8 +1,13 @@
 import type { types } from "@kastelll/cassandra-driver";
 
+interface bigintPair {
+	first: types.Long | string;
+	second: types.Long | string;
+}
+
 interface PermissionsOverrides {
-	allow: types.Long;
-	deny: types.Long;
+	allow: bigintPair[];
+	deny: bigintPair[];
 	editable: boolean;
 	id: string;// ? Id of the user or role
 	permissionId: string;
@@ -11,3 +16,5 @@ interface PermissionsOverrides {
 }
 
 export default PermissionsOverrides;
+
+export { type bigintPair }

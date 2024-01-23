@@ -1,13 +1,13 @@
 interface Channels {
+	ageRestricted: boolean;
 	allowedMentions: number;
 	channelId: string;
 	children: string[];
 	description: string | null;
-	guildId: string;
+	guildId: string | null; // should in theory never be null unless its a DM
 	name: string;
-	nsfw: boolean;
-	parentId: string;
-	permissionsOverrides: string[];
+	parentId: string | null;
+	permissionOverrides: string[];
 	position: number;
 	slowmode: number;
 	type: number;

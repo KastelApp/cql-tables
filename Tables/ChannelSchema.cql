@@ -4,12 +4,12 @@ CREATE TABLE IF NOT EXISTS channels (
 	name text,
 	description text,
 	type int,
-	nsfw boolean,
+	age_restricted boolean,
 	allowed_mentions int,
 	parent_id text,
 	children list<text>,
 	position int,
-	permissions_overides list<text>,
+	permission_overrides list<text>,
 	slowmode int,
 );
 

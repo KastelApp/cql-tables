@@ -39,7 +39,7 @@ interface Messages {
 	mentionChannels: string[];
 	mentionRoles: string[];
 	mentions: string[];
-	messageId: types.Long;
+	messageId: types.Long | bigint;
 	nonce: string | null;
 	replyingTo: string | null;
 	updatedDate: Date | null;

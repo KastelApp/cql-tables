@@ -1,14 +1,14 @@
-import type { types } from "@kastelll/cassandra-driver";
+import type { bigintPair } from "./PermissionsOverides.ts";
 
 interface Roles {
-	allowedNsfw: boolean;
+	allowedAgeRestricted: boolean;
 	color: number;
 	deleteable: boolean;
 	guildId: string;
 	hoisted: boolean;
 	mentionable: boolean;
 	name: string;
-	permissions: types.Long;
+	permissions: bigintPair[];
 	position: number;
 	roleId: string;
 }
