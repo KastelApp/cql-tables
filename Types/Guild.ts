@@ -1,7 +1,10 @@
+import type { guildFeatures } from "@/Constants.ts";
+
+type getFeatures = typeof guildFeatures[number]["name"]
 interface Guilds {
 	coOwners: string[];
 	description: string | null;
-	features: string[];
+	features: getFeatures[];
 	flags: number;
 	guildId: string;
 	icon: string | null;
