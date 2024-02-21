@@ -1,4 +1,4 @@
-import type { types } from "@kastelll/cassandra-driver";
+import type { types } from "@kastelapp/cassandra-driver";
 
 interface bigintPair {
 	first: types.Long | string;
@@ -17,4 +17,4 @@ interface PermissionsOverrides {
 
 export default PermissionsOverrides;
 
-export { type bigintPair }
+export { type bigintPair };

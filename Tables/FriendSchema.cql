@@ -7,7 +7,6 @@ CREATE TYPE IF NOT EXISTS friends_interactions (
 
 CREATE TABLE IF NOT EXISTS friends (
 	friend_id text PRIMARY KEY,
-	users list<text>,
 	interactions list<frozen<friends_interactions>>,
 ) WITH bloom_filter_fp_chance = 0.01
     AND caching = {'keys': 'ALL', 'rows_per_partition': '10'}

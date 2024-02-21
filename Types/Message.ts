@@ -1,4 +1,4 @@
-import type { types } from "@kastelll/cassandra-driver";
+import type { types } from "@kastelapp/cassandra-driver";
 
 interface Author {
 	iconUrl: string;
@@ -40,7 +40,6 @@ interface Messages {
 	mentionRoles: string[];
 	mentions: string[];
 	messageId: types.Long | bigint;
-	nonce: string | null;
 	replyingTo: string | null;
 	updatedDate: Date | null;
 }

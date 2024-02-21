@@ -21,4 +21,4 @@ CREATE TABLE IF NOT EXISTS webhooks (
     AND read_repair_chance = 0.0
     AND speculative_retry = '99PERCENTILE';
 
-CREATE INDEX IF NOT EXISTS webhooks_channel_id_index ON webhooks (channel_id);
+CREATE INDEX IF NOT EXISTS webhooks_channel_id ON webhooks (channel_id);

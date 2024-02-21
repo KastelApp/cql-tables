@@ -10,7 +10,7 @@ CREATE TYPE IF NOT EXISTS mentions_type (
 	message_id text,
 );
 
-CREATE TYPE IF NOT EXISTS guild_oreder_type (
+CREATE TYPE IF NOT EXISTS guild_order_type (
 	guild_id text,
 	position int,
 );
@@ -27,7 +27,7 @@ CREATE TABLE IF NOT EXISTS settings (
 	mentions list<frozen<mentions_type>>,
 	max_guilds int,
 	max_file_upload_size int,
-	guild_order list<frozen<guild_oreder_type>>,
+	guild_order list<frozen<guild_order_type>>,
 	allowed_invites int
 )  WITH bloom_filter_fp_chance = 0.01
     AND caching = {'keys': 'ALL', 'rows_per_partition': '10'}

@@ -1,4 +1,4 @@
-CREATE TABLE IF NOT EXISTS bot (
+CREATE TABLE IF NOT EXISTS bots (
 	user_id text,
     name text,
     description text,

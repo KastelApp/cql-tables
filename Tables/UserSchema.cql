@@ -1,5 +1,5 @@
 CREATE TABLE IF NOT EXISTS users (
-	user_id text PRIMARY KEY,
+	user_id text,
 	email text,
 	username text,
 	tag text,
@@ -12,6 +12,7 @@ CREATE TABLE IF NOT EXISTS users (
 	flags text,
 	guilds list<text>,
 	global_nickname text,
+    PRIMARY KEY (user_id)
 )  WITH bloom_filter_fp_chance = 0.01
     AND caching = {'keys': 'ALL', 'rows_per_partition': '10'}
     AND comment = ''
@@ -27,8 +28,8 @@ CREATE TABLE IF NOT EXISTS users (
     AND read_repair_chance = 0.0
     AND speculative_retry = '99PERCENTILE';
 
-CREATE INDEX IF NOT EXISTS users_email_index ON users (email);
+CREATE INDEX IF NOT EXISTS users_email_idx ON users (email);
 
-CREATE INDEX IF NOT EXISTS users_username_index ON users (username);
+CREATE INDEX IF NOT EXISTS users_username_idx ON users (username);
 
-CREATE INDEX IF NOT EXISTS users_tag_index ON users (tag);
+CREATE INDEX IF NOT EXISTS users_tag_idx ON users (tag);

@@ -3,7 +3,7 @@ CREATE TYPE IF NOT EXISTS dm_recipients (
 	flags int,
 );
 
-CREATE TABLE IF NOT EXISTS dm (
+CREATE TABLE IF NOT EXISTS dms (
 	dm_id text PRIMARY KEY,
 	recipients list<frozen<dm_recipients>>,
 	channel_id text,

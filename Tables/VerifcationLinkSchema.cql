@@ -1,4 +1,4 @@
-CREATE TABLE IF NOT EXISTS verifcationlink (
+CREATE TABLE IF NOT EXISTS verifcationlinks (
 	code text PRIMARY KEY,
 	user_id text,
 	created_date timestamp,
@@ -20,6 +20,6 @@ CREATE TABLE IF NOT EXISTS verifcationlink (
     AND read_repair_chance = 0.0
     AND speculative_retry = '99PERCENTILE';
 
-CREATE INDEX IF NOT EXISTS verifcationlink_ip_index ON verifcationlink (ip);
+CREATE INDEX IF NOT EXISTS verifcationlink_ip ON verifcationlinks (ip);
 
-CREATE INDEX IF NOT EXISTS verifcationlink_flags_index ON verifcationlink (flags);
+CREATE INDEX IF NOT EXISTS verifcationlink_flags ON verifcationlinks (flags);

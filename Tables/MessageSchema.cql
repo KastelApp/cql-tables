@@ -32,7 +32,6 @@ CREATE TABLE IF NOT EXISTS messages (
 	allowed_mentions int,
 	updated_date timestamp,
 	channel_id text,
-	nonce text,
     bucket text,
 	flags int,
 	mentions list<text>,

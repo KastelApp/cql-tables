@@ -3,7 +3,7 @@ CREATE TYPE IF NOT EXISTS bigint_pair (
   second bigint
 );
 
-CREATE TABLE IF NOT EXISTS permissionsoverides (
+CREATE TABLE IF NOT EXISTS permissions_overides (
 	permission_id text PRIMARY KEY,
 	id text,
 	allow_ list<frozen<bigint_pair>>,
@@ -26,4 +26,4 @@ CREATE TABLE IF NOT EXISTS permissionsoverides (
     AND read_repair_chance = 0.0
     AND speculative_retry = '99PERCENTILE';
 
-CREATE INDEX IF NOT EXISTS permissionsoverides_id_index ON permissionsoverides (id);
+CREATE INDEX IF NOT EXISTS permissions_overides_id ON permissions_overides (id);

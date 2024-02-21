@@ -25,5 +25,5 @@ CREATE TABLE IF NOT EXISTS invites (
     AND read_repair_chance = 0.0
     AND speculative_retry = '99PERCENTILE';
 
-CREATE INDEX IF NOT EXISTS invites_channel_id_index ON invites (channel_id);
+CREATE INDEX IF NOT EXISTS invites_channel_id ON invites (channel_id);
 
