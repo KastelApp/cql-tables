@@ -4,9 +4,8 @@ CREATE TYPE IF NOT EXISTS dm_recipients (
 );
 
 CREATE TABLE IF NOT EXISTS dms (
-	dm_id text PRIMARY KEY,
 	recipients list<frozen<dm_recipients>>,
-	channel_id text,
+	channel_id text PRIMARY KEY,
 	flags int,
 ) WITH bloom_filter_fp_chance = 0.01
     AND caching = {'keys': 'ALL', 'rows_per_partition': '10'}

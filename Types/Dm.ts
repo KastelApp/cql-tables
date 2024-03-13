@@ -5,7 +5,6 @@ interface DmRecipients {
 
 interface Dm {
 	channelId: string;
-	dmId: string;
 	flags: number;
 	recipients: DmRecipients[];
 }

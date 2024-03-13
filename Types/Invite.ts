@@ -4,9 +4,10 @@ interface Invites {
 	createdAt: Date;
 	creatorId: string;
 	deleteable: boolean;
-	expires: Date;
+	expires: Date | null;
 	guildId: string;
 	maxUses: number;
+	type: number;
 	uses: number;
 }
 

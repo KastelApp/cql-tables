@@ -27,3 +27,4 @@ CREATE TABLE IF NOT EXISTS invites (
 
 CREATE INDEX IF NOT EXISTS invites_channel_id ON invites (channel_id);
 
+CREATE INDEX IF NOT EXISTS invites_code ON invites (code);

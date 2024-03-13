@@ -26,3 +26,5 @@ CREATE TABLE IF NOT EXISTS channels (
     AND min_index_interval = 128
     AND read_repair_chance = 0.0
     AND speculative_retry = '99PERCENTILE';
+
+CREATE INDEX IF NOT EXISTS channel_id_channels ON channels (channel_id);
