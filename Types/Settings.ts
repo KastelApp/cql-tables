@@ -7,6 +7,8 @@ interface SettingsTokens {
 }
 
 interface SettingsMentions {
+	channelId: string;
+	count: number;
 	messageId: string;
 }
 

@@ -8,6 +8,8 @@ CREATE TYPE IF NOT EXISTS tokens_type (
 
 CREATE TYPE IF NOT EXISTS mentions_type (
 	message_id text,
+	channel_id text,
+	count int,
 );
 
 CREATE TYPE IF NOT EXISTS guild_order_type (
