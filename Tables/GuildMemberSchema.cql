@@ -3,6 +3,11 @@ CREATE TYPE IF NOT EXISTS member_timeouts (
 	timeout_until timestamp,
 );
 
+CREATE TYPE IF NOT EXISTS channel_acks (
+    channel_id text,
+    message_id text
+)
+
 CREATE TABLE IF NOT EXISTS guild_members (
 	guild_id text,
 	user_id text,
@@ -11,6 +16,7 @@ CREATE TABLE IF NOT EXISTS guild_members (
 	joined_at timestamp,
 	flags int,
 	timeouts list<frozen<member_timeouts>>,
+    channel_acks list<frozen<channel_acks>>,
     guild_member_id bigint,
 	PRIMARY KEY (guild_id, guild_member_id)
 ) WITH CLUSTERING ORDER BY (guild_member_id ASC)

@@ -5,7 +5,13 @@ interface GuildMembersTimeouts {
 	timeoutUntil: Date;
 }
 
+interface ChannelAcks {
+	channelId: string;
+	messageId: string;
+}
+
 interface GuildMembers {
+	channelAcks: ChannelAcks[];
 	flags: number;
 	guildId: string;
 	guildMemberId: types.Long | string;
@@ -18,4 +24,4 @@ interface GuildMembers {
 
 export default GuildMembers;
 
-export type { GuildMembers, GuildMembersTimeouts };
+export type { GuildMembers, GuildMembersTimeouts, ChannelAcks };
