@@ -3,6 +3,7 @@ interface VerificationLink {
 	createdDate: Date;
 	expireDate: Date;
 	flags: number;
+	id: string;
 	ip: string;
 	userId: string;
 }

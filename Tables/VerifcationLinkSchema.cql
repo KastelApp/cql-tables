@@ -1,10 +1,12 @@
 CREATE TABLE IF NOT EXISTS verifcationlinks (
-	code text PRIMARY KEY,
+	code text,
+    id text,
 	user_id text,
 	created_date timestamp,
 	expire_date timestamp,
 	ip text,
 	flags int,
+    PRIMARY KEY ((code, id), user_id)
 ) WITH bloom_filter_fp_chance = 0.01
     AND caching = {'keys': 'ALL', 'rows_per_partition': '10'}
     AND comment = ''
@@ -19,7 +21,3 @@ CREATE TABLE IF NOT EXISTS verifcationlinks (
     AND min_index_interval = 128
     AND read_repair_chance = 0.0
     AND speculative_retry = '99PERCENTILE';
-
-CREATE INDEX IF NOT EXISTS verifcationlink_ip ON verifcationlinks (ip);
-
-CREATE INDEX IF NOT EXISTS verifcationlink_flags ON verifcationlinks (flags);
