@@ -30,7 +30,9 @@ CREATE TABLE IF NOT EXISTS settings (
 	max_guilds int,
 	max_file_upload_size int,
 	guild_order list<frozen<guild_order_type>>,
-	allowed_invites int
+	allowed_invites int,
+	nav_location text,
+	emoji_pack text,
 )  WITH bloom_filter_fp_chance = 0.01
     AND caching = {'keys': 'ALL', 'rows_per_partition': '10'}
     AND comment = ''
