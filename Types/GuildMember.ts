@@ -16,6 +16,7 @@ interface GuildMembers {
 	guildId: string;
 	guildMemberId: types.Long | string;
 	joinedAt: Date;
+	left: boolean;
 	nickname: string | null;
 	roles: string[];
 	timeouts: GuildMembersTimeouts[];

@@ -18,7 +18,8 @@ CREATE TABLE IF NOT EXISTS guild_members (
 	timeouts list<frozen<member_timeouts>>,
     channel_acks list<frozen<channel_acks>>,
     guild_member_id bigint,
-	PRIMARY KEY (guild_id, guild_member_id)
+    left boolean,
+	PRIMARY KEY ((guild_id, left), guild_member_id)
 ) WITH CLUSTERING ORDER BY (guild_member_id ASC)
     AND bloom_filter_fp_chance = 0.01
     AND caching = {'keys': 'ALL', 'rows_per_partition': '10'}
