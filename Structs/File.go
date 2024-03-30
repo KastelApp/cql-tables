@@ -15,12 +15,12 @@ var FilesTable = table.New(table.Metadata{
 
 type File struct {
 	FileID     string    `db:"file_id"`
-	ForID      string    `db:"for_id"`
+	ForID      *string   `db:"for_id"`
 	Name       string    `db:"name"`
 	Type       string    `db:"type"`
 	Deleted    bool      `db:"deleted"`
 	Uploaded   bool      `db:"uploaded"`
 	UploadedAt time.Time `db:"uploaded_at"`
 	UploadedBy string    `db:"uploaded_by"`
-	Hash       string    `db:"hash"`
+	Hash       *string   `db:"hash"`
 }

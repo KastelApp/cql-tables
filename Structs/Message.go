@@ -3,8 +3,8 @@ package structs
 import (
 	"time"
 
-	"github.com/scylladb/gocqlx/v2/table"
 	"github.com/scylladb/gocqlx/v2"
+	"github.com/scylladb/gocqlx/v2/table"
 )
 
 var MessagesTable = table.New(table.Metadata{
@@ -34,15 +34,15 @@ type Field struct {
 
 type MainObject struct {
 	gocqlx.UDT
-	Title            string   `db:"title"`
-	Description      string   `db:"description"`
-	URL              string   `db:"url"`
-	Color            string   `db:"color"`
+	Title       string `db:"title"`
+	Description string `db:"description"`
+	URL         string `db:"url"`
+	Color       string `db:"color"`
 	Author
 	Footer
-	Fields        []Field `db:"fields"`
-	ThumbnailURL  string  `db:"thumbnail_url"`
-	ImageURL      string  `db:"image_url"`
+	Fields       []Field `db:"fields"`
+	ThumbnailURL string  `db:"thumbnail_url"`
+	ImageURL     string  `db:"image_url"`
 }
 
 type Message struct {
@@ -50,7 +50,7 @@ type Message struct {
 	AuthorID        string       `db:"author_id"`
 	Content         string       `db:"content"`
 	AllowedMentions int          `db:"allowed_mentions"`
-	UpdatedDate     time.Time    `db:"updated_date"`
+	UpdatedDate     *time.Time   `db:"updated_date"`
 	ChannelID       string       `db:"channel_id"`
 	Bucket          string       `db:"bucket"`
 	Flags           int          `db:"flags"`
@@ -59,5 +59,5 @@ type Message struct {
 	MentionChannels []string     `db:"mention_channels"`
 	Embeds          []MainObject `db:"embeds"`
 	Attachments     []string     `db:"attachments"`
-	ReplyingTo      string       `db:"replying_to"`
+	ReplyingTo      *string      `db:"replying_to"`
 }

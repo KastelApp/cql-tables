@@ -13,9 +13,9 @@ var GuildsTable = table.New(table.Metadata{
 
 type Guild struct {
 	GuildID     string   `db:"guild_id"`
-	Icon        string   `db:"icon"`
+	Icon        *string  `db:"icon"`
 	Name        string   `db:"name"`
-	Description string   `db:"description"`
+	Description *string  `db:"description"`
 	Flags       int      `db:"flags"`
 	OwnerID     string   `db:"owner_id"`
 	CoOwners    []string `db:"co_owners"`

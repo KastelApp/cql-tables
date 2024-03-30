@@ -15,21 +15,21 @@ var SettingsTable = table.New(table.Metadata{
 })
 
 type Setting struct {
-	UserID            string       `db:"user_id"`
-	Status            int          `db:"status"`
-	CustomStatus      string       `db:"custom_status"`
-	Bio               string       `db:"bio"`
-	Tokens            []Token      `db:"tokens"`
-	Theme             string       `db:"theme"`
-	Language          string       `db:"language"`
-	Privacy           int          `db:"privacy"`
-	Mentions          []Mention    `db:"mentions"`
-	MaxGuilds         int          `db:"max_guilds"`
-	MaxFileUploadSize int          `db:"max_file_upload_size"`
-	GuildOrder        []GuildOrder `db:"guild_order"`
-	AllowedInvites    int          `db:"allowed_invites"`
-	NavLocation       string       `db:"nav_location"`
-	EmojiPack         string       `db:"emoji_pack"`
+	UserID            string        `db:"user_id"`
+	Status            int           `db:"status"`
+	CustomStatus      *string       `db:"custom_status"`
+	Bio               *string       `db:"bio"`
+	Tokens            []Token       `db:"tokens"`
+	Theme             string        `db:"theme"`
+	Language          string        `db:"language"`
+	Privacy           int           `db:"privacy"`
+	Mentions          []Mention     `db:"mentions"`
+	MaxGuilds         int           `db:"max_guilds"`
+	MaxFileUploadSize int           `db:"max_file_upload_size"`
+	GuildOrder        *[]GuildOrder `db:"guild_order"`
+	AllowedInvites    int           `db:"allowed_invites"`
+	NavLocation       string        `db:"nav_location"`
+	EmojiPack         string        `db:"emoji_pack"`
 }
 
 type Token struct {

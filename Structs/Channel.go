@@ -13,13 +13,13 @@ var ChannelsTable = table.New(table.Metadata{
 
 type Channel struct {
 	ChannelID           string   `db:"channel_id"`
-	GuildID             string   `db:"guild_id"`
+	GuildID             *string  `db:"guild_id"`
 	Name                string   `db:"name"`
-	Description         string   `db:"description"`
+	Description         *string  `db:"description"`
 	Type                int      `db:"type"`
 	AgeRestricted       bool     `db:"age_restricted"`
 	AllowedMentions     int      `db:"allowed_mentions"`
-	ParentID            string   `db:"parent_id"`
+	ParentID            *string  `db:"parent_id"`
 	Children            []string `db:"children"`
 	Position            int      `db:"position"`
 	PermissionOverrides []string `db:"permission_overrides"`

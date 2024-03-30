@@ -12,17 +12,17 @@ var UsersTable = table.New(table.Metadata{
 })
 
 type User struct {
-	UserID         string   `db:"user_id"`
-	Email          string   `db:"email"`
-	Username       string   `db:"username"`
-	Tag            string   `db:"tag"`
-	Avatar         string   `db:"avatar"`
-	Password       string   `db:"password"`
-	PhoneNumber    string   `db:"phone_number"`
-	TwoFaSecret    string   `db:"two_fa_secret"`
-	IPs            []string `db:"ips"`
-	PublicFlags    string   `db:"public_flags"`
-	Flags          string   `db:"flags"`
-	Guilds         []string `db:"guilds"`
-	GlobalNickname string   `db:"global_nickname"`
+	UserID         string    `db:"user_id"`
+	Email          string    `db:"email"`
+	Username       string    `db:"username"`
+	Tag            string    `db:"tag"`
+	Avatar         *string   `db:"avatar"`
+	Password       *string   `db:"password"`
+	PhoneNumber    *string   `db:"phone_number"`
+	TwoFaSecret    *string   `db:"two_fa_secret"`
+	IPs            []string  `db:"ips"`
+	PublicFlags    string    `db:"public_flags"`
+	Flags          string    `db:"flags"`
+	Guilds         *[]string `db:"guilds"`
+	GlobalNickname *string   `db:"global_nickname"`
 }

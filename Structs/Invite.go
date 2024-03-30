@@ -14,14 +14,14 @@ var InvitesTable = table.New(table.Metadata{
 })
 
 type Invite struct {
-	Code       string    `db:"code"`
-	GuildID    string    `db:"guild_id"`
-	ChannelID  string    `db:"channel_id"`
-	Expires    time.Time `db:"expires"`
-	CreatedAt  time.Time `db:"created_at"`
-	Uses       int       `db:"uses"`
-	MaxUses    int       `db:"max_uses"`
-	CreatorID  string    `db:"creator_id"`
-	Deleteable bool      `db:"deleteable"`
-	Type       int       `db:"type"`
+	Code       string     `db:"code"`
+	GuildID    string     `db:"guild_id"`
+	ChannelID  string     `db:"channel_id"`
+	Expires    *time.Time `db:"expires"`
+	CreatedAt  time.Time  `db:"created_at"`
+	Uses       int        `db:"uses"`
+	MaxUses    int        `db:"max_uses"`
+	CreatorID  string     `db:"creator_id"`
+	Deleteable bool       `db:"deleteable"`
+	Type       int        `db:"type"`
 }

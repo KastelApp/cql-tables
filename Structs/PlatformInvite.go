@@ -14,10 +14,9 @@ var PlatformInvitesTable = table.New(table.Metadata{
 })
 
 type PlatformInvite struct {
-	Code      string    `db:"code"`
-	CreatorID string    `db:"creator_id"`
-	ExpiresAt time.Time `db:"expires_at"`
-	UsedByID  string    `db:"used_by_id"`
-	UsedAt    time.Time `db:"used_at"`
+	Code      string     `db:"code"`
+	CreatorID string     `db:"creator_id"`
+	ExpiresAt time.Time  `db:"expires_at"`
+	UsedByID  *string    `db:"used_by_id"`
+	UsedAt    *time.Time `db:"used_at"`
 }
-

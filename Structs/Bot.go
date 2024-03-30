@@ -12,10 +12,10 @@ var BotsTable = table.New(table.Metadata{
 })
 
 type Bot struct {
-	UserID      string `db:"user_id"`
-	Name        string `db:"name"`
-	Description string `db:"description"`
-	Avatar      string `db:"avatar"`
-	Summary     string `db:"summary"`
-	OwnerID     string `db:"owner_id"`
+	UserID      string  `db:"user_id"`
+	Name        string  `db:"name"`
+	Description *string `db:"description"`
+	Avatar      *string `db:"avatar"`
+	Summary     *string `db:"summary"`
+	OwnerID     string  `db:"owner_id"`
 }

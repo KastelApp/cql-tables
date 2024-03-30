@@ -3,8 +3,8 @@ package structs
 import (
 	"time"
 
-	"github.com/scylladb/gocqlx/v2/table"
 	"github.com/scylladb/gocqlx/v2"
+	"github.com/scylladb/gocqlx/v2/table"
 )
 
 var GuildMembersTable = table.New(table.Metadata{
@@ -15,16 +15,16 @@ var GuildMembersTable = table.New(table.Metadata{
 })
 
 type GuildMember struct {
-	GuildID      string            `db:"guild_id"`
-	UserID       string            `db:"user_id"`
-	Roles        []string          `db:"roles"`
-	Nickname     string            `db:"nickname"`
-	JoinedAt     time.Time         `db:"joined_at"`
-	Flags        int               `db:"flags"`
-	Timeouts     []MemberTimeout   `db:"timeouts"`
-	ChannelAcks  []ChannelAck      `db:"channel_acks"`
-	GuildMemberID int64            `db:"guild_member_id"`
-	Left         bool              `db:"left"`
+	GuildID       string          `db:"guild_id"`
+	UserID        string          `db:"user_id"`
+	Roles         []string        `db:"roles"`
+	Nickname      *string         `db:"nickname"`
+	JoinedAt      time.Time       `db:"joined_at"`
+	Flags         int             `db:"flags"`
+	Timeouts      []MemberTimeout `db:"timeouts"`
+	ChannelAcks   []ChannelAck    `db:"channel_acks"`
+	GuildMemberID int64           `db:"guild_member_id"`
+	Left          bool            `db:"left"`
 }
 
 type MemberTimeout struct {
