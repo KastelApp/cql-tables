@@ -1,26 +1,24 @@
 package structs
 
 import (
+	"time"
+
 	"github.com/scylladb/gocqlx/v2/table"
-	"github.com/scylladb/gocqlx/v2"
 )
 
 var FriendsTable = table.New(table.Metadata{
 	Name:    "friends",
-	Columns: []string{"friend_id", "interactions"},
+	Columns: []string{"created_at", "flags", "friend_id", "primary_user_id", "primary_user_nickname", "secondary_user_id", "secondary_user_nickname"},
 	PartKey: []string{"friend_id"},
 	SortKey: []string{},
 })
 
-type Friend struct {
-	FriendID      string `db:"friend_id"`
-	Interactions  []FriendInteraction `db:"interactions"`
-}
-
-type FriendInteraction struct {
-	gocqlx.UDT
-	UserID         string `db:"user_id"`
-	TargetID       string `db:"target_id"`
-	TargetNickname string `db:"target_nickname"`
-	Flags          int    `db:"flags"`
+type Friends struct {
+	CreatedAt            time.Time `db:"created_at"`
+	Flags                int    `db:"flags"`
+	FriendID             string `db:"friend_id"`
+	PrimaryUserID        string `db:"primary_user_id"`
+	PrimaryUserNickname  string `db:"primary_user_nickname"`
+	SecondaryUserID      string `db:"secondary_user_id"`
+	SecondaryUserNickname string `db:"secondary_user_nickname"`
 }

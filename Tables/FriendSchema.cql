@@ -1,13 +1,11 @@
-CREATE TYPE IF NOT EXISTS friends_interactions (
-	user_id text,
-	target_id text,
-	target_nickname text,
-	flags int,
-);
-
 CREATE TABLE IF NOT EXISTS friends (
 	friend_id text PRIMARY KEY,
-	interactions list<frozen<friends_interactions>>,
+    primary_user_id text,
+    secondary_user_id text,
+    primary_user_nickname text,
+    secondary_user_nickname text,
+    flags int,
+    created_at timestamp,
 ) WITH bloom_filter_fp_chance = 0.01
     AND caching = {'keys': 'ALL', 'rows_per_partition': '10'}
     AND comment = ''
