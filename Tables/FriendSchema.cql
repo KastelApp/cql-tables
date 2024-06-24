@@ -1,11 +1,13 @@
 CREATE TABLE IF NOT EXISTS friends (
-	friend_id text PRIMARY KEY,
+	friend_id text,
     primary_user_id text,
     secondary_user_id text,
     primary_user_nickname text,
     secondary_user_nickname text,
-    flags int,
+    primary_user_flags int,
+    secondary_user_flags int,
     created_at timestamp,
+    PRIMARY KEY (friend_id, primary_user_id, secondary_user_id)
 ) WITH bloom_filter_fp_chance = 0.01
     AND caching = {'keys': 'ALL', 'rows_per_partition': '10'}
     AND comment = ''
@@ -20,3 +22,7 @@ CREATE TABLE IF NOT EXISTS friends (
     AND min_index_interval = 128
     AND read_repair_chance = 0.0
     AND speculative_retry = '99PERCENTILE';
+
+CREATE INDEX IF NOT EXISTS friends_primary_user_id ON friends (primary_user_id);
+
+CREATE INDEX IF NOT EXISTS friends_secondary_user_id ON friends (secondary_user_id);
