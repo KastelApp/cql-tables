@@ -3,12 +3,12 @@ interface Friends {
 	friendId: string;
 	primaryUserFlags: number;
 	primaryUserId: string; 
-	primaryUserNickname: string;
+	primaryUserNickname: string | null;
 	// ? The primary user sets this
 	secondaryUserFlags: number; 
 	// ? The secondary user sets this
 	secondaryUserId: string;
-	secondaryUserNickname: string;
+	secondaryUserNickname: string | null;
 }
 
 export default Friends;
