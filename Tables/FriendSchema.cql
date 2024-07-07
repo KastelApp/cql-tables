@@ -1,5 +1,5 @@
 CREATE TABLE IF NOT EXISTS friends (
-	friend_id text,
+    friend_id text,
     primary_user_id text,
     secondary_user_id text,
     primary_user_nickname text,
@@ -8,15 +8,15 @@ CREATE TABLE IF NOT EXISTS friends (
     secondary_user_flags int,
     created_at timestamp,
     PRIMARY KEY ((primary_user_id, secondary_user_id), friend_id)
-) WITH bloom_filter_fp_chance = 0.01
-    AND caching = {'keys': 'ALL', 'rows_per_partition': '10'}
-    AND comment = ''
-    AND compaction = {'class': 'org.apache.cassandra.db.compaction.SizeTieredCompactionStrategy', 'max_threshold': '32', 'min_threshold': '4'}
-    AND compression = {'chunk_length_in_kb': '64', 'sstable_compression': 'org.apache.cassandra.io.compress.LZ4Compressor'}
+)
+WITH bloom_filter_fp_chance = 0.01
+    AND caching = {'keys': 'ALL', 'rows_per_partition': 'ALL'}
+    AND compaction = {'class': 'org.apache.cassandra.db.compaction.LeveledCompactionStrategy', 'sstable_size_in_mb': '160'}
+    AND compression = {'sstable_compression': 'org.apache.cassandra.io.compress.LZ4Compressor'}
     AND crc_check_chance = 1.0
     AND dclocal_read_repair_chance = 0.1
     AND default_time_to_live = 0
-    AND gc_grace_seconds = 3600
+    AND gc_grace_seconds = 86400
     AND max_index_interval = 2048
     AND memtable_flush_period_in_ms = 0
     AND min_index_interval = 128
