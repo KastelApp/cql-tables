@@ -12,10 +12,10 @@ var BansTable = table.New(table.Metadata{
 })
 
 type Ban struct {
-	GuildID    string `db:"guild_id"`
-	UserID     string `db:"user_id"`
-	BannerID   string `db:"banner_id"`
+	GuildID    string  `db:"guild_id"`
+	UserID     string  `db:"user_id"`
+	BannerID   string  `db:"banner_id"`
 	Reason     *string `db:"reason"`
-	BannedDate int64  `db:"banned_date"`
-	UnbanDate  int64  `db:"unban_date"`
+	BannedDate int64   `db:"banned_date"`
+	UnbanDate  int64   `db:"unban_date"`
 }

@@ -4,8 +4,8 @@ import type { ExtractTypesFromCreateTable } from "@/Utils/Classes/DB/createTable
 export const friendsTable = createTable({
     primaryKeys: [["primaryUserId", "secondaryUserId"], "friendId"],
     indexes: [
-        ["friends_primary_user_id", "primaryUserId"], 
-        ["friends_secondary_user_id", "secondaryUserId"], 
+        ["friends_primary_user_id", "primaryUserId"],
+        ["friends_secondary_user_id", "secondaryUserId"],
         ["friends_friend_id", "friendId"]
     ],
     tableName: "friends",

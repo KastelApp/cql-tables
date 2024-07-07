@@ -1,8 +1,8 @@
 package structs
 
 import (
-	"github.com/scylladb/gocqlx/v2/table"
 	"github.com/scylladb/gocqlx/v2"
+	"github.com/scylladb/gocqlx/v2/table"
 )
 
 var DmsTable = table.New(table.Metadata{

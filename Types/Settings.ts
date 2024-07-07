@@ -14,7 +14,7 @@ interface SettingsMentions {
 
 interface GuildOrder {
 	guildId: string;
-	position: number
+	position: number;
 }
 
 interface Settings {

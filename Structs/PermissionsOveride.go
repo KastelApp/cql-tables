@@ -12,11 +12,11 @@ var PermissionsOveridesTable = table.New(table.Metadata{
 })
 
 type PermissionsOveride struct {
-	PermissionID string `db:"permission_id"`
-	ID           string `db:"id"`
+	PermissionID string       `db:"permission_id"`
+	ID           string       `db:"id"`
 	Allow        []BigintPair `db:"allow_"`
 	Deny         []BigintPair `db:"deny"`
-	Type         int `db:"type"`
-	Editable     bool `db:"editable"`
-	Slowmode     int `db:"slowmode"`
+	Type         int          `db:"type"`
+	Editable     bool         `db:"editable"`
+	Slowmode     int          `db:"slowmode"`
 }

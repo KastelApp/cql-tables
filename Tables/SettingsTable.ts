@@ -35,7 +35,7 @@ export const settingsTable = createTable({
     types: {
         tokensType: {
             token_: "string",
-            createdDate: "m",
+            createdDate: "timestamp",
             ip: "string",
             flags: "int",
             tokenId: "string"

@@ -2,10 +2,10 @@ interface Friends {
 	createdAt: Date,
 	friendId: string;
 	primaryUserFlags: number;
-	primaryUserId: string; 
+	primaryUserId: string;
 	primaryUserNickname: string | null;
 	// ? The primary user sets this
-	secondaryUserFlags: number; 
+	secondaryUserFlags: number;
 	// ? The secondary user sets this
 	secondaryUserId: string;
 	secondaryUserNickname: string | null;
