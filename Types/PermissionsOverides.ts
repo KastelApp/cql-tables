@@ -17,4 +17,4 @@ interface PermissionsOverrides {
 
 export default PermissionsOverrides;
 
-export { type bigintPair };
+export type { bigintPair };
