@@ -19,8 +19,8 @@ export const permissionsOverridesTable = createTable({
     columns: {
         permissionId: "string",
         id: "string",
-        allow: ["frozen<bigintPair>"],
-        deny: ["frozen<bigintPair>"],
+        allow: "list<frozen<bigintPair>>",
+        deny: "list<frozen<bigintPair>>",
         type: "int",
         editable: "boolean",
         slowmode: "int"
