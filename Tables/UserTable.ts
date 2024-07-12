@@ -1,5 +1,6 @@
 import createTable from "@/Utils/Classes/DB/createTable.ts";
 import type { ExtractTypesFromCreateTable } from "@/Utils/Classes/DB/createTableTypes.ts";
+import Encryption from "@/Utils/Classes/Encryption.ts";
 
 export const usersTable = createTable({
     primaryKeys: ["userId"],
@@ -15,6 +16,23 @@ export const usersTable = createTable({
                 return data;
             },
         },
+        1: {
+            fields: ["username", "tag", "usernameTag"],
+            changes: "This adds usernameTag to the table.",
+            migrate: (_, data: {
+                username: string;
+                tag: string;
+                usernameTag: string | null
+            }) => {
+                console.log(data);
+                const decryptedUsername = Encryption.decrypt(data.username);
+                
+                return {
+                    ...data,
+                    usernameTag: Encryption.encrypt(`${decryptedUsername}#${data.tag}`)
+                }
+            },
+        }
     },
     columns: {
         userId: "string",
@@ -29,7 +47,8 @@ export const usersTable = createTable({
         publicFlags: "string",
         flags: "string",
         guilds: ["string"],
-        globalNickname: "string"
+        globalNickname: "string",
+        usernameTag: "string"
     },
     with: {
         bloomFilterFpChance: 0.01,
@@ -55,7 +74,7 @@ export const usersTable = createTable({
         readRepairChance: 0,
         speculativeRetry: "99PERCENTILE"
     },
-    version: 1
+    version: 2
 });
 
 export type UserTable = ExtractTypesFromCreateTable<typeof usersTable>;
