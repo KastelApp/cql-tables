@@ -6,7 +6,7 @@ import (
 
 var EmptyBucketsTable = table.New(table.Metadata{
 	Name:    "empty_buckets",
-	Columns: []string{"channel_id", "buckets"},
+	Columns: []string{"channel_id", "buckets", "int_tbl_ver"},
 	PartKey: []string{"channel_id"},
 	SortKey: []string{},
 })
@@ -14,4 +14,5 @@ var EmptyBucketsTable = table.New(table.Metadata{
 type EmptyBucket struct {
 	ChannelID string   `db:"channel_id"`
 	Buckets   []string `db:"buckets"`
+	IntTblVer int      `db:"int_tbl_ver"`
 }

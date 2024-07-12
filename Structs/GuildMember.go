@@ -9,7 +9,7 @@ import (
 
 var GuildMembersTable = table.New(table.Metadata{
 	Name:    "guild_members",
-	Columns: []string{"guild_id", "user_id", "roles", "nickname", "joined_at", "flags", "timeouts", "channel_acks", "guild_member_id", "left"},
+	Columns: []string{"guild_id", "user_id", "roles", "nickname", "joined_at", "flags", "timeouts", "channel_acks", "guild_member_id", "left", "int_tbl_ver"},
 	PartKey: []string{"guild_id", "left"},
 	SortKey: []string{"guild_member_id"},
 })
@@ -25,6 +25,7 @@ type GuildMember struct {
 	ChannelAcks   []ChannelAck    `db:"channel_acks"`
 	GuildMemberID int64           `db:"guild_member_id"`
 	Left          bool            `db:"left"`
+	IntTblVer     int             `db:"int_tbl_ver"`
 }
 
 type MemberTimeout struct {

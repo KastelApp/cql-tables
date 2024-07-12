@@ -6,7 +6,7 @@ import (
 
 var BansTable = table.New(table.Metadata{
 	Name:    "bans",
-	Columns: []string{"guild_id", "user_id", "banner_id", "reason", "banned_date", "unban_date"},
+	Columns: []string{"guild_id", "user_id", "banner_id", "reason", "banned_date", "unban_date", "int_tbl_ver"},
 	PartKey: []string{"guild_id", "user_id"},
 	SortKey: []string{},
 })
@@ -18,4 +18,5 @@ type Ban struct {
 	Reason     *string `db:"reason"`
 	BannedDate int64   `db:"banned_date"`
 	UnbanDate  int64   `db:"unban_date"`
+	IntTblVer  int     `db:"int_tbl_ver"`
 }

@@ -9,7 +9,7 @@ import (
 
 var MessagesTable = table.New(table.Metadata{
 	Name:    "messages",
-	Columns: []string{"message_id", "author_id", "content", "allowed_mentions", "updated_date", "channel_id", "bucket", "flags", "mentions", "mention_roles", "mention_channels", "embeds", "attachments", "replying_to"},
+	Columns: []string{"message_id", "author_id", "content", "allowed_mentions", "updated_date", "channel_id", "bucket", "flags", "mentions", "mention_roles", "mention_channels", "embeds", "attachments", "replying_to", "int_tbl_ver"},
 	PartKey: []string{"channel_id", "bucket"},
 	SortKey: []string{"message_id"},
 })

@@ -9,7 +9,7 @@ import (
 
 var SettingsTable = table.New(table.Metadata{
 	Name:    "settings",
-	Columns: []string{"user_id", "status", "custom_status", "bio", "tokens", "theme", "language", "privacy", "mentions", "max_guilds", "max_file_upload_size", "guild_order", "allowed_invites", "nav_location", "emoji_pack"},
+	Columns: []string{"user_id", "status", "custom_status", "bio", "tokens", "theme", "language", "privacy", "mentions", "max_guilds", "max_file_upload_size", "guild_order", "allowed_invites", "nav_location", "emoji_pack", "int_tbl_ver"},
 	PartKey: []string{"user_id"},
 	SortKey: []string{},
 })

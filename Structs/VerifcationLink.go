@@ -8,7 +8,7 @@ import (
 
 var VerifcationLinksTable = table.New(table.Metadata{
 	Name:    "verifcationlinks",
-	Columns: []string{"code", "id", "user_id", "created_date", "expire_date", "ip", "flags"},
+	Columns: []string{"code", "id", "user_id", "created_date", "expire_date", "ip", "flags", "int_tbl_ver"},
 	PartKey: []string{"code", "id"},
 	SortKey: []string{"user_id"},
 })

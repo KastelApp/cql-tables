@@ -6,7 +6,7 @@ import (
 
 var BotsTable = table.New(table.Metadata{
 	Name:    "bots",
-	Columns: []string{"user_id", "name", "description", "avatar", "summary", "owner_id"},
+	Columns: []string{"user_id", "name", "description", "avatar", "summary", "owner_id", "int_tbl_ver"},
 	PartKey: []string{"user_id"},
 	SortKey: []string{},
 })
@@ -18,4 +18,5 @@ type Bot struct {
 	Avatar      *string `db:"avatar"`
 	Summary     *string `db:"summary"`
 	OwnerID     string  `db:"owner_id"`
+	IntTblVer   int     `db:"int_tbl_ver"`
 }

@@ -6,7 +6,7 @@ import (
 
 var GuildsTable = table.New(table.Metadata{
 	Name:    "guilds",
-	Columns: []string{"guild_id", "icon", "name", "description", "flags", "owner_id", "co_owners", "max_members", "features"},
+	Columns: []string{"guild_id", "icon", "name", "description", "flags", "owner_id", "co_owners", "max_members", "features", "int_tbl_ver"},
 	PartKey: []string{"guild_id"},
 	SortKey: []string{},
 })
@@ -21,4 +21,5 @@ type Guild struct {
 	CoOwners    []string `db:"co_owners"`
 	MaxMembers  int      `db:"max_members"`
 	Features    []string `db:"features"`
+	IntTblVer   int      `db:"int_tbl_ver"`
 }

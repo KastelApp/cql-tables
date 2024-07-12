@@ -6,7 +6,7 @@ import (
 
 var ChannelsTable = table.New(table.Metadata{
 	Name:    "channels",
-	Columns: []string{"channel_id", "guild_id", "name", "description", "type", "age_restricted", "allowed_mentions", "parent_id", "children", "position", "permission_overrides", "slowmode"},
+	Columns: []string{"channel_id", "guild_id", "name", "description", "type", "age_restricted", "allowed_mentions", "parent_id", "children", "position", "permission_overrides", "slowmode", "int_tbl_ver"},
 	PartKey: []string{"guild_id", "channel_id"},
 	SortKey: []string{},
 })
@@ -24,4 +24,5 @@ type Channel struct {
 	Position            int      `db:"position"`
 	PermissionOverrides []string `db:"permission_overrides"`
 	Slowmode            int      `db:"slowmode"`
+	IntTblVer           int      `db:"int_tbl_ver"`
 }

@@ -6,7 +6,7 @@ import (
 
 var UsersTable = table.New(table.Metadata{
 	Name:    "users",
-	Columns: []string{"user_id", "email", "username", "tag", "avatar", "password", "phone_number", "two_fa_secret", "ips", "public_flags", "flags", "guilds", "global_nickname"},
+	Columns: []string{"user_id", "email", "username", "tag", "avatar", "password", "phone_number", "two_fa_secret", "ips", "public_flags", "flags", "guilds", "global_nickname", "int_tbl_ver"},
 	PartKey: []string{"user_id"},
 	SortKey: []string{},
 })

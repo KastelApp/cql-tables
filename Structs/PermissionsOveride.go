@@ -6,7 +6,7 @@ import (
 
 var PermissionsOveridesTable = table.New(table.Metadata{
 	Name:    "permissions_overides",
-	Columns: []string{"permission_id", "id", "allow_", "deny", "type", "editable", "slowmode"},
+	Columns: []string{"permission_id", "id", "allow_", "deny", "type", "editable", "slowmode", "int_tbl_ver"},
 	PartKey: []string{"permission_id"},
 	SortKey: []string{},
 })

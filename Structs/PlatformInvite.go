@@ -8,7 +8,7 @@ import (
 
 var PlatformInvitesTable = table.New(table.Metadata{
 	Name:    "platform_invite",
-	Columns: []string{"code", "creator_id", "expires_at", "used_by_id", "used_at"},
+	Columns: []string{"code", "creator_id", "expires_at", "used_by_id", "used_at", "int_tbl_ver"},
 	PartKey: []string{"code"},
 	SortKey: []string{},
 })

@@ -6,7 +6,7 @@ import (
 
 var EmojisTable = table.New(table.Metadata{
 	Name:    "emojis",
-	Columns: []string{"emoji_id", "guild_id", "creator_id", "name", "disabled", "public"},
+	Columns: []string{"emoji_id", "guild_id", "creator_id", "name", "disabled", "public", "int_tbl_ver"},
 	PartKey: []string{"guild_id", "emoji_id"},
 	SortKey: []string{},
 })
@@ -18,4 +18,5 @@ type Emoji struct {
 	Name      string `db:"name"`
 	Disabled  bool   `db:"disabled"`
 	Public    bool   `db:"public"`
+	IntTblVer int    `db:"int_tbl_ver"`
 }

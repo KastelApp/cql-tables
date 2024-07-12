@@ -8,7 +8,7 @@ import (
 
 var InvitesTable = table.New(table.Metadata{
 	Name:    "invites",
-	Columns: []string{"code", "guild_id", "channel_id", "expires", "created_at", "uses", "max_uses", "creator_id", "deleteable", "type"},
+	Columns: []string{"code", "guild_id", "channel_id", "expires", "created_at", "uses", "max_uses", "creator_id", "deleteable", "type", "int_tbl_ver"},
 	PartKey: []string{"guild_id", "code"},
 	SortKey: []string{},
 })

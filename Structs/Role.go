@@ -7,7 +7,7 @@ import (
 
 var RolesTable = table.New(table.Metadata{
 	Name:    "roles",
-	Columns: []string{"role_id", "guild_id", "name", "allowed_age_restricted", "deleteable", "mentionable", "hoisted", "color", "permissions", "position"},
+	Columns: []string{"role_id", "guild_id", "name", "allowed_age_restricted", "deleteable", "mentionable", "hoisted", "color", "permissions", "position", "int_tbl_ver"},
 	PartKey: []string{"guild_id", "role_id"},
 	SortKey: []string{},
 })

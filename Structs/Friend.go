@@ -8,7 +8,7 @@ import (
 
 var FriendsTable = table.New(table.Metadata{
 	Name:    "friends",
-	Columns: []string{"created_at", "friend_id", "primary_user_flags", "primary_user_id", "primary_user_nickname", "secondary_user_flags", "secondary_user_id", "secondary_user_nickname"},
+	Columns: []string{"created_at", "friend_id", "primary_user_flags", "primary_user_id", "primary_user_nickname", "secondary_user_flags", "secondary_user_id", "secondary_user_nickname", "int_tbl_ver"},
 	PartKey: []string{"friend_id", "primary_user_id", "secondary_user_id"},
 	SortKey: []string{},
 })
@@ -22,4 +22,5 @@ type Friends struct {
 	SecondaryUserFlags    int       `db:"secondary_user_flags"`
 	SecondaryUserID       string    `db:"secondary_user_id"`
 	SecondaryUserNickname *string   `db:"secondary_user_nickname"`
+	IntTblVer             int       `db:"int_tbl_ver"`
 }

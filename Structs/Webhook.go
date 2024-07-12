@@ -6,7 +6,7 @@ import (
 
 var WebhooksTable = table.New(table.Metadata{
 	Name:    "webhooks",
-	Columns: []string{"webhook_id", "guild_id", "channel_id", "username", "token_", "allowed_mentions"},
+	Columns: []string{"webhook_id", "guild_id", "channel_id", "username", "token_", "allowed_mentions", "int_tbl_ver"},
 	PartKey: []string{"guild_id", "webhook_id"},
 	SortKey: []string{},
 })
