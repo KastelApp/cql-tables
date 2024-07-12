@@ -24,11 +24,11 @@ export const usersTable = createTable({
                 tag: string;
                 usernameTag: string | null
             }) => {
-                console.log(data);
                 const decryptedUsername = Encryption.decrypt(data.username);
                 
                 return {
-                    ...data,
+                    username: data.username,
+                    tag: data.tag,
                     usernameTag: Encryption.encrypt(`${decryptedUsername}#${data.tag}`)
                 }
             },
