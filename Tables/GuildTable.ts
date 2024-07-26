@@ -1,5 +1,6 @@
 import createTable from "@/Utils/Classes/DB/createTable.ts";
 import type { ExtractTypesFromCreateTable } from "@/Utils/Classes/DB/createTableTypes.ts";
+import { guildMembersTable } from "@/Utils/Cql/Tables/GuildMemberTable.ts";
 
 export const guildsTable = createTable({
     primaryKeys: ["guildId"],
@@ -15,6 +16,23 @@ export const guildsTable = createTable({
                 return data;
             },
         },
+        1: {
+            fields: "*",
+            changes: "This counts all a members in a guild, while this is dumb it should be fine since most guilds will have less then 20 members",
+            migrate: async (_, data: { guildId: string, members: number }) => {
+                const queued = await guildMembersTable.find({
+                    guildId: data.guildId,
+                    left: false
+                }, {
+                    allowFiltering: true
+                });
+                
+                return {
+                    guildId: data.guildId,
+                    members: queued.length
+                }
+            },
+        }
     },
     columns: {
         guildId: "string",
@@ -25,7 +43,8 @@ export const guildsTable = createTable({
         ownerId: "string",
         coOwners: ["string"],
         maxMembers: "int",
-        features: ["string"]
+        features: ["string"],
+        members: "int"
     },
     with: {
         bloomFilterFpChance: 0.01,
@@ -53,7 +72,7 @@ export const guildsTable = createTable({
         readRepairChance: 0,
         speculativeRetry: "99PERCENTILE"
     },
-    version: 1
+    version: 2
 });
 
 export type GuildTable = ExtractTypesFromCreateTable<typeof guildsTable>;
