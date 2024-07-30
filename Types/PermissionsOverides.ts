@@ -1,8 +1,8 @@
 import type { types } from "@kastelapp/cassandra-driver";
 
 interface bigintPair {
-	first: types.Long | string;
-	second: types.Long | string;
+	first: types.Long | string | bigint;
+	second: types.Long | string | bigint;
 }
 
 interface PermissionsOverrides {

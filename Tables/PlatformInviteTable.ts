@@ -19,9 +19,9 @@ export const platformInviteTable = createTable({
     columns: {
         code: "string",
         creatorId: "string",
-        expiresAt: "Date",
+        expiresAt: "timestamp",
         usedById: "string",
-        usedAt: "Date"
+        usedAt: "timestamp"
     },
     with: {
         bloomFilterFpChance: 0.01,

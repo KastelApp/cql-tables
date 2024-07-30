@@ -23,7 +23,7 @@ export const filesTable = createTable({
         type: "string",
         deleted: "boolean",
         uploaded: "boolean",
-        uploadedAt: "Date",
+        uploadedAt: "timestamp",
         uploadedBy: "string",
         hash: "string"
     },

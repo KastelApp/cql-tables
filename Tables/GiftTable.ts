@@ -19,8 +19,8 @@ export const giftsTable = createTable({
         giftId: "string",
         userId: "string",
         type: "int",
-        maxAge: "Date",
-        giftLength: "Date",
+        maxAge: "timestamp",
+        giftLength: "timestamp",
         usedBy: "string"
     },
     with: {

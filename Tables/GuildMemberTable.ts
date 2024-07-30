@@ -22,6 +22,7 @@ export const guildMembersTable = createTable({
         roles: ["string"],
         nickname: "string",
         joinedAt: "timestamp",
+        timeoutUntil: "timestamp",
         flags: "int",
         timeouts: ["frozen<memberTimeouts>"],
         channelAcks: ["frozen<channelAcks>"],
