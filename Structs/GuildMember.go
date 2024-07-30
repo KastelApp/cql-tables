@@ -21,7 +21,7 @@ type GuildMember struct {
 	Nickname      *string         `db:"nickname"`
 	JoinedAt      time.Time       `db:"joined_at"`
 	Flags         int             `db:"flags"`
-	TimeoutUntil  time.Time       `db:"timeout_until"`
+	TimeoutUntil  *time.Time      `db:"timeout_until"`
 	Timeouts      []MemberTimeout `db:"timeouts"`
 	ChannelAcks   []ChannelAck    `db:"channel_acks"`
 	GuildMemberID int64           `db:"guild_member_id"`
