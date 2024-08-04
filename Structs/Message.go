@@ -3,7 +3,6 @@ package structs
 import (
 	"time"
 
-	"github.com/scylladb/gocqlx/v2"
 	"github.com/scylladb/gocqlx/v2/table"
 )
 
@@ -15,34 +14,30 @@ var MessagesTable = table.New(table.Metadata{
 })
 
 type Author struct {
-	gocqlx.UDT
-	Name    string `db:"name"`
-	IconURL string `db:"iconurl"`
+	Name    string `cql:"name"`
+	IconURL string `cql:"iconurl"`
 }
 
 type Footer struct {
-	gocqlx.UDT
-	Text      string    `db:"text"`
-	Timestamp time.Time `db:"timestamp_"`
+	Text      string    `cql:"text"`
+	Timestamp time.Time `cql:"timestamp_"`
 }
 
 type Field struct {
-	gocqlx.UDT
-	Title       string `db:"title"`
-	Description string `db:"description"`
+	Title       string `cql:"title"`
+	Description string `cql:"description"`
 }
 
 type MainObject struct {
-	gocqlx.UDT
-	Title       string `db:"title"`
-	Description string `db:"description"`
-	URL         string `db:"url"`
-	Color       string `db:"color"`
-	Author
-	Footer
-	Fields       []Field `db:"fields"`
-	ThumbnailURL string  `db:"thumbnail_url"`
-	ImageURL     string  `db:"image_url"`
+	Title        string  `cql:"title"`
+	Description  string  `cql:"description"`
+	URL          string  `cql:"url"`
+	Color        string  `cql:"color"`
+	Author       Author  `cql:"author"`
+	Footer       Footer  `cql:"footer"`
+	Fields       []Field `cql:"fields"`
+	ThumbnailURL string  `cql:"thumbnail_url"`
+	ImageURL     string  `cql:"image_url"`
 }
 
 type Message struct {

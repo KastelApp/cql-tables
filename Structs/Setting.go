@@ -3,7 +3,6 @@ package structs
 import (
 	"time"
 
-	"github.com/scylladb/gocqlx/v2"
 	"github.com/scylladb/gocqlx/v2/table"
 )
 
@@ -33,23 +32,20 @@ type Setting struct {
 }
 
 type Token struct {
-	gocqlx.UDT
-	Token     string    `db:"token_"`
-	CreatedAt time.Time `db:"created_date"`
-	IP        string    `db:"ip"`
-	Flags     int       `db:"flags"`
-	TokenID   string    `db:"token_id"`
+	Token     string    `cql:"token_"`
+	CreatedAt time.Time `cql:"created_date"`
+	IP        string    `cql:"ip"`
+	Flags     int       `cql:"flags"`
+	TokenID   string    `cql:"token_id"`
 }
 
 type Mention struct {
-	gocqlx.UDT
-	MessageID string `db:"message_id"`
-	ChannelID string `db:"channel_id"`
-	Count     int    `db:"count"`
+	MessageID string `cql:"message_id"`
+	ChannelID string `cql:"channel_id"`
+	Count     int    `cql:"count"`
 }
 
 type GuildOrder struct {
-	gocqlx.UDT
-	GuildID  string `db:"guild_id"`
-	Position int    `db:"position"`
+	GuildID  string `cql:"guild_id"`
+	Position int    `cql:"position"`
 }

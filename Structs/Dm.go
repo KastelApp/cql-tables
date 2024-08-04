@@ -1,7 +1,6 @@
 package structs
 
 import (
-	"github.com/scylladb/gocqlx/v2"
 	"github.com/scylladb/gocqlx/v2/table"
 )
 
@@ -20,7 +19,6 @@ type Dm struct {
 }
 
 type DmRecipient struct {
-	gocqlx.UDT
-	UserID string `db:"user_id"`
-	Flags  int    `db:"flags"`
+	UserID string `cql:"user_id"`
+	Flags  int    `cql:"flags"`
 }

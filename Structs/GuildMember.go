@@ -3,7 +3,6 @@ package structs
 import (
 	"time"
 
-	"github.com/scylladb/gocqlx/v2"
 	"github.com/scylladb/gocqlx/v2/table"
 )
 
@@ -30,13 +29,11 @@ type GuildMember struct {
 }
 
 type MemberTimeout struct {
-	gocqlx.UDT
-	ChannelID    string    `db:"channel_id"`
-	TimeoutUntil time.Time `db:"timeout_until"`
+	ChannelID    string    `cql:"channel_id"`
+	TimeoutUntil time.Time `cql:"timeout_until"`
 }
 
 type ChannelAck struct {
-	gocqlx.UDT
-	ChannelID string `db:"channel_id"`
-	MessageID string `db:"message_id"`
+	ChannelID string `cql:"channel_id"`
+	MessageID string `cql:"message_id"`
 }

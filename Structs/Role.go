@@ -1,7 +1,6 @@
 package structs
 
 import (
-	"github.com/scylladb/gocqlx/v2"
 	"github.com/scylladb/gocqlx/v2/table"
 )
 
@@ -26,7 +25,6 @@ type Role struct {
 }
 
 type BigintPair struct {
-	gocqlx.UDT
-	First  int64 `db:"first"`
-	Second int64 `db:"second"`
+	First  int64 `cql:"first"`
+	Second int64 `cql:"second"`
 }
