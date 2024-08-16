@@ -51,6 +51,10 @@ export const messagesTable = createTable({
             iconUrl: "string",
             url: "string"
         },
+        embedThumbnail: {
+            placeholder: "string",
+            url: "string"
+        },
         embed: {
             title: "string",
             description: "string",
@@ -61,7 +65,7 @@ export const messagesTable = createTable({
             footer: "frozen<embedFooter>",
             fields: ["frozen<embedField>"],
             author: "frozen<embedAuthor>",
-            thumbnail: "string"
+            thumbnail: "frozen<embedThumbnail>"
         }
     },
     with: {
