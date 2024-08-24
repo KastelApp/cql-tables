@@ -1,4 +1,4 @@
-import type { types } from "@kastelapp/cassandra-driver";
+import { Embed } from "@/Types/Embed.ts";
 
 interface Author {
 	iconUrl: string;
@@ -34,12 +34,12 @@ interface Messages {
 	bucket: string;
 	channelId: string;
 	content: string;
-	embeds: MainObject[];
+	embeds: Embed[];
 	flags: number;
 	mentionChannels: string[];
 	mentionRoles: string[];
 	mentions: string[];
-	messageId: types.Long | bigint | string;
+	messageId: bigint | string;
 	replyingTo: string | null;
 	updatedDate: Date | null;
 }

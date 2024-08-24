@@ -32,10 +32,6 @@ export const messagesTable = createTable({
         replyingTo: "string"
     },
     types: {
-        embedFiles: {
-            name: "string",
-            url: "string"
-        },
         embedFooter: {
             text: "string",
             iconUrl: "string",
@@ -52,20 +48,37 @@ export const messagesTable = createTable({
             url: "string"
         },
         embedThumbnail: {
-            placeholder: "string",
+            url: "string",
+        },
+        embedIframeSource: {
+            provider: "string",
             url: "string"
+        },
+        embedProvider: {
+            name: "string",
+            url: "string"
+        },
+        embedFiles: {
+            name: "string",
+            url: "string",
+            height: "int",
+            width: "int",
+            type: "string",
+            thumbHash: "string"
         },
         embed: {
             title: "string",
             description: "string",
             url: "string",
             color: "int",
-            type: "string", // ? Note: we are assuming we validate this when adding the row
+            type: "string",
             files: ["frozen<embedFiles>"],
             footer: "frozen<embedFooter>",
             fields: ["frozen<embedField>"],
             author: "frozen<embedAuthor>",
-            thumbnail: "frozen<embedThumbnail>"
+            thumbnail: "frozen<embedThumbnail>",
+            iframeSource: "frozen<embedIframeSource>",
+            provider: "frozen<embedProvider>"
         }
     },
     with: {
