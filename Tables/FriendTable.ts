@@ -28,7 +28,7 @@ export const friendsTable = createTable({
         secondaryUserNickname: "string",
         primaryUserFlags: "int",
         secondaryUserFlags: "int",
-        createdAt: "date"
+        createdAt: "timestamp"
     },
     with: {
         bloomFilterFpChance: 0.01,
