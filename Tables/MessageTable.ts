@@ -112,3 +112,5 @@ export const messagesTable = createTable({
 });
 
 export type MessageTable = ExtractTypesFromCreateTable<typeof messagesTable>;
+
+export type EmbedType = ExtractTypesFromCreateTable<typeof messagesTable>["embeds"][0];

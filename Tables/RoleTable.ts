@@ -63,3 +63,5 @@ export const rolesTable = createTable({
 });
 
 export type RoleTable = ExtractTypesFromCreateTable<typeof rolesTable>;
+
+export type BigintPair = ExtractTypesFromCreateTable<typeof rolesTable>["permissions"][0];
