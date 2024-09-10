@@ -48,7 +48,21 @@ export const usersTable = createTable({
         flags: "string",
         guilds: ["string"],
         globalNickname: "string",
-        usernameTag: "string"
+        usernameTag: "string",
+        oauth2: ["frozen<oauthConnections>"],
+    },
+    types: {
+        tokenPair: {
+            refreshToken: "string",
+            accessToken: "string",
+            expiresAt: "timestamp",
+            scopes: ["string"]
+        },
+        oauthConnections: {
+            authorizedAt: "timestamp",
+            applicationId: "string",
+            tokens: ["frozen<tokenPair>"]
+        }
     },
     with: {
         bloomFilterFpChance: 0.01,

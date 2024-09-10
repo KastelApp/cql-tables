@@ -17,7 +17,7 @@ export const guildsTable = createTable({
             },
         },
         1: {
-            fields: "*",
+            fields: ["members", "guildId"],
             changes: "This counts all a members in a guild, while this is dumb it should be fine since most guilds will have less then 20 members",
             migrate: async (_, data: { guildId: string, members: number }) => {
                 const queued = await guildMembersTable.find({

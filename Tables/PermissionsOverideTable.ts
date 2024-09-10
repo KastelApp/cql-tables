@@ -17,7 +17,9 @@ export const permissionsOverridesTable = createTable({
         },
     },
     columns: {
+        // ? permission id is the unique id for the permission override
         permissionId: "string",
+        // ? id is the id for the override, i.e the user, role etc. You probably shouldn't query this directly
         id: "string",
         allow: "list<frozen<bigintPair>>",
         deny: "list<frozen<bigintPair>>",

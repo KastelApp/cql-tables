@@ -1,3 +1,4 @@
+import Constants from "@/Constants.ts";
 import createTable from "@/Utils/Classes/DB/createTable.ts";
 import type { ExtractTypesFromCreateTable } from "@/Utils/Classes/DB/createTableTypes.ts";
 
@@ -14,6 +15,17 @@ export const settingsTable = createTable({
                 return data;
             },
         },
+        1: {
+            fields: ["maxFileUploadSize"],
+            changes: "This changes the maxFileUploadSize to the new value.",
+            migrate: (_, data: {
+                maxFileUploadSize: number
+            }) => {
+                data.maxFileUploadSize = Constants.settings.Max.MaxFileSize;
+                
+                return data;
+            }
+        }
     },
     columns: {
         userId: "string",
@@ -24,7 +36,6 @@ export const settingsTable = createTable({
         theme: "string",
         language: "string",
         privacy: "int",
-        mentions: ["frozen<mentionsType>"],
         maxGuilds: "int",
         maxFileUploadSize: "int",
         guildOrder: ["frozen<guildOrderType>"],
@@ -39,11 +50,6 @@ export const settingsTable = createTable({
             ip: "string",
             flags: "int",
             tokenId: "string"
-        },
-        mentionsType: {
-            messageId: "string",
-            channelId: "string",
-            count: "int"
         },
         guildOrderType: {
             guildId: "string",
@@ -74,7 +80,7 @@ export const settingsTable = createTable({
         readRepairChance: 0,
         speculativeRetry: "99PERCENTILE"
     },
-    version: 1
+    version: 2
 });
 
 export type SettingsTable = ExtractTypesFromCreateTable<typeof settingsTable>;

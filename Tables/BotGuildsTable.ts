@@ -1,10 +1,9 @@
 import createTable from "@/Utils/Classes/DB/createTable.ts";
 import type { ExtractTypesFromCreateTable } from "@/Utils/Classes/DB/createTableTypes.ts";
 
-export const filesTable = createTable({
-    primaryKeys: ["fileId"],
-    indexes: [["uploader_idx", "uploadedBy"], "uploaded"],
-    tableName: "files",
+export const botsGuildsTable = createTable({
+    primaryKeys: [["guildId", "botId"]],
+    tableName: "botGuilds",
     ifNotExists: true,
     mode: "camelCase",
     migrationScripts: {
@@ -17,31 +16,32 @@ export const filesTable = createTable({
         },
     },
     columns: {
-        fileId: "string",
-        name: "string",
-        deleted: "boolean",
-        uploadedBy: "string",
-        uploaded: "boolean",
-        type: "int", // ? 1 = avatar, 2 = file, 3 = guild icon, 4 = banner
-        thumbHash: "string", // ? base64 thumbhash only for images ofc
+        guildId: "string",
+        botId: "string",
+        guildMemberId: "string",
+        addedBy: "string",
+        roleId: "string",
     },
     with: {
         bloomFilterFpChance: 0.01,
         caching: {
             keys: "ALL",
-            rowsPerPartition: "ALL"
+            rowsPerPartition: "10"
         },
+        comment: "",
         compaction: {
-            class: "org.apache.cassandra.db.compaction.LeveledCompactionStrategy",
-            sstableSizeInMb: "160"
+            class: "org.apache.cassandra.db.compaction.SizeTieredCompactionStrategy",
+            maxThreshold: "32",
+            minThreshold: "4"
         },
         compression: {
+            chunkLengthKb: 64,
             sstableCompression: "org.apache.cassandra.io.compress.LZ4Compressor"
         },
         crcCheckChance: 1,
         dclocalReadRepairChance: 0.1,
         defaultTimeToLive: 0,
-        gcGraceSeconds: 86_400,
+        gcGraceSeconds: 3_600,
         maxIndexInterval: 2_048,
         memtableFlushPeriodInMs: 0,
         minIndexInterval: 128,
@@ -51,4 +51,4 @@ export const filesTable = createTable({
     version: 1
 });
 
-export type FileTable = ExtractTypesFromCreateTable<typeof filesTable>;
+export type BotGuildsTable = ExtractTypesFromCreateTable<typeof botsGuildsTable>;

@@ -1,9 +1,10 @@
 import createTable from "@/Utils/Classes/DB/createTable.ts";
 import type { ExtractTypesFromCreateTable } from "@/Utils/Classes/DB/createTableTypes.ts";
 
-export const botsTable = createTable({
-    primaryKeys: ["userId"],
-    tableName: "bots",
+export const applicationsTable = createTable({
+    primaryKeys: ["applicationId"],
+    indexes: ["botId", "ownerId"],
+    tableName: "applications",
     ifNotExists: true,
     mode: "camelCase",
     migrationScripts: {
@@ -16,12 +17,16 @@ export const botsTable = createTable({
         },
     },
     columns: {
-        userId: "string",
+        applicationId: "string",
+        botId: "string",
         name: "string",
-        description: "string",
+        description: "string", // ? also is bio since bots cannot edit user settings
         avatar: "string",
-        summary: "string",
-        ownerId: "string"
+        ownerId: "string",
+        allowedScopes: "string", // ? private scopes they have access to
+        flags: "string",
+        redirectUris: ["string"],
+        clientSecret: "string"
     },
     with: {
         bloomFilterFpChance: 0.01,
@@ -45,4 +50,4 @@ export const botsTable = createTable({
     version: 1
 });
 
-export type BotTable = ExtractTypesFromCreateTable<typeof botsTable>;
+export type ApplicationTable = ExtractTypesFromCreateTable<typeof applicationsTable>;

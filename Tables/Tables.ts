@@ -1,5 +1,7 @@
+export { botsGuildsTable } from "@/Utils/Cql/Tables/BotGuildsTable.ts";
+export { readStatesTable } from "@/Utils/Cql/Tables/ReadStatesTable.ts";
 export { bansTable } from "./BanTable.ts";
-export { botsTable } from "./BotTable.ts";
+export { applicationsTable } from "./ApplicationTable.ts";
 export { channelsTable } from "./ChannelTable.ts";
 export { dmsTable } from "./DmTable.ts";
 export { emojisTable } from "./EmojiTable.ts";
