@@ -1,5 +1,5 @@
-import createTable from "@/Utils/Classes/DB/createTable.ts";
-import type { ExtractTypesFromCreateTable } from "@/Utils/Classes/DB/createTableTypes.ts";
+import createTable from "@/Utils/Cql/DB/createTable";
+import type { ExtractTypesFromCreateTable } from "@/Utils/Cql/DB/createTableTypes";
 
 export const rolesTable = createTable({
     primaryKeys: ["guildId", "roleId"],
@@ -25,7 +25,8 @@ export const rolesTable = createTable({
         hoisted: "boolean",
         color: "int",
         permissions: ["frozen<bigintPair>"],
-        position: "int"
+        position: "int",
+        managed: "boolean", // ? managed = bot role, in the future could also mean something like twitch subscriber role (maybe)
     },
     types: {
         bigintPair: {

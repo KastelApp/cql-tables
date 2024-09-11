@@ -1,6 +1,6 @@
 import Constants from "@/Constants.ts";
-import createTable from "@/Utils/Classes/DB/createTable.ts";
-import type { ExtractTypesFromCreateTable } from "@/Utils/Classes/DB/createTableTypes.ts";
+import createTable from "@/Utils/Cql/DB/createTable";
+import type { ExtractTypesFromCreateTable } from "@/Utils/Cql/DB/createTableTypes";
 
 export const settingsTable = createTable({
     primaryKeys: ["userId"],

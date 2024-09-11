@@ -1,5 +1,5 @@
-import createTable from "@/Utils/Classes/DB/createTable.ts";
-import type { ExtractTypesFromCreateTable } from "@/Utils/Classes/DB/createTableTypes.ts";
+import createTable from "@/Utils/Cql/DB/createTable";
+import type { ExtractTypesFromCreateTable } from "@/Utils/Cql/DB/createTableTypes";
 import Encryption from "@/Utils/Classes/Encryption.ts";
 
 export const usersTable = createTable({
@@ -50,6 +50,7 @@ export const usersTable = createTable({
         globalNickname: "string",
         usernameTag: "string",
         oauth2: ["frozen<oauthConnections>"],
+        banner: "string"
     },
     types: {
         tokenPair: {
