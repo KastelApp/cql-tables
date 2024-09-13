@@ -25,7 +25,6 @@ export const guildMembersTable = createTable({
         timeoutUntil: "timestamp",
         flags: "int",
         timeouts: ["frozen<memberTimeouts>"],
-        channelAcks: ["frozen<channelAcks>"],
         guildMemberId: "bigint",
         left: "boolean"
     },
@@ -33,10 +32,6 @@ export const guildMembersTable = createTable({
         memberTimeouts: {
             channelId: "string",
             timeoutUntil: "timestamp"
-        },
-        channelAcks: {
-            channelId: "string",
-            messageId: "string"
         }
     },
     with: {
