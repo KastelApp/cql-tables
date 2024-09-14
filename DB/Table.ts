@@ -825,6 +825,7 @@ class Table<T> {
 					tRawThisis["options"]
 				>[key];
 			};
+			pageState?: string | Buffer;
 		},
 	): Promise<
 		Finder<
@@ -905,6 +906,7 @@ class Table<T> {
 		const [data, error] = await safePromise(
 			gotClient.execute(opts.query, opts.params, {
 				prepare: true,
+				fetchSize: options.limit,
 			}),
 		);
 
@@ -1016,6 +1018,10 @@ class Table<T> {
 					ExtractTypesFromCreateTable<this["options"]>,
 				Fields
 			>,
+			this,
+			filter,
+			options,
+			data.pageState
 		);
 	}
 

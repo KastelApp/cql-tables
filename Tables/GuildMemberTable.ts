@@ -2,8 +2,11 @@ import createTable from "@/Utils/Cql/DB/createTable";
 import type { ExtractTypesFromCreateTable } from "@/Utils/Cql/DB/createTableTypes";
 
 export const guildMembersTable = createTable({
-    primaryKeys: [["guildId", "left"], "guildMemberId"],
-    indexes: [["guild_members_member_id_idx", "userId"]],
+    primaryKeys: ["guildId", "guildMemberId"],
+    indexes: [
+        ["guild_members_member_id_idx", "userId"],
+        ["guild_members_left_idx", "left"],
+    ],
     tableName: "guildMembers",
     ifNotExists: true,
     mode: "camelCase",

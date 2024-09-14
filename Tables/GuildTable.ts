@@ -23,8 +23,6 @@ export const guildsTable = createTable({
                 const queued = await guildMembersTable.find({
                     guildId: data.guildId,
                     left: false
-                }, {
-                    allowFiltering: true
                 });
                 
                 return {
