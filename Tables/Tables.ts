@@ -1,6 +1,6 @@
-export { settingsTable } from "@/Utils/Cql/Tables/SettingsTable.ts";
-export { botsGuildsTable } from "@/Utils/Cql/Tables/BotGuildsTable.ts";
-export { readStatesTable } from "@/Utils/Cql/Tables/ReadStatesTable.ts";
+export { settingsTable } from "@/utils/cql/Tables/SettingsTable.ts";
+export { botsGuildsTable } from "@/utils/cql/Tables/BotGuildsTable.ts";
+export { readStatesTable } from "@/utils/cql/Tables/ReadStatesTable.ts";
 export { bansTable } from "./BanTable.ts";
 export { applicationsTable } from "./ApplicationTable.ts";
 export { channelsTable } from "./ChannelTable.ts";

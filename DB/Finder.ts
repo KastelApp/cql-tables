@@ -1,4 +1,4 @@
-import type Table from "@/Utils/Cql/DB/Table.ts";
+import type Table from "@/utils/cql/DB/Table.ts";
 
 class Finder<Data> {
 	public data: Data[];

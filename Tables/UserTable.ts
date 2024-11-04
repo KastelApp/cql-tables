@@ -1,6 +1,6 @@
-import createTable from "@/Utils/Cql/DB/createTable";
-import type { ExtractTypesFromCreateTable } from "@/Utils/Cql/DB/createTableTypes";
-import Encryption from "@/Utils/Classes/Encryption.ts";
+import createTable from "@/utils/cql/DB/createTable";
+import type { ExtractTypesFromCreateTable } from "@/utils/cql/DB/createTableTypes";
+import Encryption from "@/utils/classes/Encryption.ts";
 
 export const usersTable = createTable({
     primaryKeys: ["userId"],

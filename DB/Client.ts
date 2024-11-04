@@ -2,9 +2,9 @@ import { EventEmitter } from "node:events";
 import process from "node:process";
 import { createInterface } from "node:readline/promises";
 import cassandra, { type ClientOptions } from "@kastelapp/cassandra-driver";
-import App from "@/Utils/Classes/App.ts";
-import ListenerMap from "@/Utils/Classes/ListenerMap.ts";
-import safePromise from "@/Utils/safePromise.ts";
+import App from "@/utils/classes/App.ts";
+import ListenerMap from "@/utils/classes/ListenerMap.ts";
+import safePromise from "@/utils/safePromise.ts";
 import type Table from "./Table.ts";
 import type { Options } from "./createTableTypes.ts";
 

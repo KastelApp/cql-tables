@@ -1,6 +1,6 @@
 import Long from "long";
-import App from "@/Utils/Classes/App.ts";
-import safePromise from "@/Utils/safePromise.ts";
+import App from "@/utils/classes/App.ts";
+import safePromise from "@/utils/safePromise.ts";
 import Client from "./Client.ts";
 import type {
 	AllTypes,

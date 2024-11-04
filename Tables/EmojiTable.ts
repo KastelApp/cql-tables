@@ -1,5 +1,5 @@
-import createTable from "@/Utils/Cql/DB/createTable";
-import type { ExtractTypesFromCreateTable } from "@/Utils/Cql/DB/createTableTypes";
+import createTable from "@/utils/cql/DB/createTable";
+import type { ExtractTypesFromCreateTable } from "@/utils/cql/DB/createTableTypes";
 
 export const emojisTable = createTable({
     primaryKeys: ["guildId", "emojiId"],
