@@ -32,6 +32,7 @@ export const settingsTable = createTable({
         status: "int",
         customStatus: "string",
         bio: "string",
+        shortBio: "string", // ? The difference between bio and shortBio is simple, bio is longer, supports more markdown features and only shows when the large user popout is active
         tokens: ["frozen<tokensType>"],
         theme: "string",
         language: "string",
