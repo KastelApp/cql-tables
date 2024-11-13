@@ -61,10 +61,11 @@ export const messagesTable = createTable({
 		embedFiles: {
 			name: "string",
 			url: "string",
+			rawUrl: "string",
 			height: "int",
 			width: "int",
 			type: "string",
-			thumbHash: "string",
+			thumbHash: "string"
 		},
 		embed: {
 			title: "string",
